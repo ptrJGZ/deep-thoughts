@@ -1,7 +1,7 @@
 import React from "react";
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
-import { QUERY_THOUGHTS, QUERY_ME_BASIC } from "../utils/queries";
+import { QUERY_THOUGHTS, QUERY_ME } from "../utils/queries";
 import ThoughtList from "../components/ThoughtList";
 import ThoughtForm from "../components/ThoughtForm";
 import FriendList from "../components/FriendList";
@@ -10,7 +10,7 @@ const Home = () => {
   // use useQuery
   const { loading, data } = useQuery(QUERY_THOUGHTS);
   // use object destructuring to extract `data` from the `useQuery` Hook's response and rename it `userData` to be more descriptive
-  const { data: userData } = useQuery(QUERY_ME_BASIC);
+  const { data: userData } = useQuery(QUERY_ME);
 
   const thoughts = data?.thoughts || [];
 
